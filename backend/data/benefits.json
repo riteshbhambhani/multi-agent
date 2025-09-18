@@ -1,0 +1,3704 @@
+[
+  {
+    "benefit_id": "benefit_79a87fe2",
+    "user_id": "u1000",
+    "member_id": "M770487",
+    "plan_id": "plan_177206b8",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2023-01-26",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 3820.57,
+    "deductible_remaining": 89.39,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_0755e57c",
+    "user_id": "u1001",
+    "member_id": "M329258",
+    "plan_id": "plan_88e41b68",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-06-01",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5673.44,
+    "deductible_remaining": 478.98,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_4759f69f",
+    "user_id": "u1002",
+    "member_id": "M543143",
+    "plan_id": "plan_7cd72c6a",
+    "plan_name": "Gold HMO",
+    "effective_date": "2023-10-12",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 3474.39,
+    "deductible_remaining": 1031.87,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_01ecc322",
+    "user_id": "u1003",
+    "member_id": "M377370",
+    "plan_id": "plan_df5204b2",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2025-01-17",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 5375.15,
+    "deductible_remaining": 137.47,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_3522814c",
+    "user_id": "u1004",
+    "member_id": "M338968",
+    "plan_id": "plan_86810e26",
+    "plan_name": "Gold HMO",
+    "effective_date": "2023-03-23",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3536.0,
+    "deductible_remaining": 628.52,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_a4d2a427",
+    "user_id": "u1005",
+    "member_id": "M379946",
+    "plan_id": "plan_ab54bd5a",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2024-09-15",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 2984.71,
+    "deductible_remaining": 2776.17,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_37c6abac",
+    "user_id": "u1006",
+    "member_id": "M821590",
+    "plan_id": "plan_b46c3f0b",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-12-02",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5927.75,
+    "deductible_remaining": 1203.49,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_affea879",
+    "user_id": "u1007",
+    "member_id": "M169403",
+    "plan_id": "plan_e87839c5",
+    "plan_name": "Silver PPO",
+    "effective_date": "2025-07-24",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 2285.79,
+    "deductible_remaining": 418.89,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_1da2dc82",
+    "user_id": "u1008",
+    "member_id": "M881177",
+    "plan_id": "plan_f6a9fd95",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-02-03",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 5656.8,
+    "deductible_remaining": 2583.31,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_5b242df9",
+    "user_id": "u1009",
+    "member_id": "M260265",
+    "plan_id": "plan_45673366",
+    "plan_name": "Silver PPO",
+    "effective_date": "2025-03-22",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5241.56,
+    "deductible_remaining": 343.66,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_ec71511d",
+    "user_id": "u1010",
+    "member_id": "M663054",
+    "plan_id": "plan_12b78c9e",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-02-26",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 4292.25,
+    "deductible_remaining": 319.23,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_96f69e98",
+    "user_id": "u1011",
+    "member_id": "M755674",
+    "plan_id": "plan_02cdce43",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-05-11",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 6744.25,
+    "deductible_remaining": 2767.3,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_f461c29b",
+    "user_id": "u1012",
+    "member_id": "M100599",
+    "plan_id": "plan_3e0a967f",
+    "plan_name": "Gold HMO",
+    "effective_date": "2024-05-15",
+    "termination_date": "2025-01-06",
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 1971.09,
+    "deductible_remaining": 1457.97,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_2afe60fc",
+    "user_id": "u1013",
+    "member_id": "M172574",
+    "plan_id": "plan_180e0bbe",
+    "plan_name": "Silver PPO",
+    "effective_date": "2023-05-12",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 6609.02,
+    "deductible_remaining": 2265.8,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_211e2837",
+    "user_id": "u1014",
+    "member_id": "M823378",
+    "plan_id": "plan_16170655",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-12-31",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 2735.84,
+    "deductible_remaining": 1014.26,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_0e63279e",
+    "user_id": "u1015",
+    "member_id": "M716886",
+    "plan_id": "plan_aa4e0a48",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-08-25",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 6479.81,
+    "deductible_remaining": 2578.91,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_74e8d369",
+    "user_id": "u1016",
+    "member_id": "M174299",
+    "plan_id": "plan_c7115167",
+    "plan_name": "Silver PPO",
+    "effective_date": "2023-10-13",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5815.41,
+    "deductible_remaining": 2422.49,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_14a7d508",
+    "user_id": "u1017",
+    "member_id": "M299659",
+    "plan_id": "plan_bceb4b56",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2023-04-10",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3714.42,
+    "deductible_remaining": 1017.91,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_0f1c634f",
+    "user_id": "u1018",
+    "member_id": "M214576",
+    "plan_id": "plan_b2668228",
+    "plan_name": "Silver PPO",
+    "effective_date": "2023-07-16",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 3937.22,
+    "deductible_remaining": 2584.05,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_bdb68cdd",
+    "user_id": "u1019",
+    "member_id": "M677057",
+    "plan_id": "plan_a441917d",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2023-02-21",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 2414.71,
+    "deductible_remaining": 1456.92,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_fff32356",
+    "user_id": "u1020",
+    "member_id": "M324130",
+    "plan_id": "plan_638aa133",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2025-07-13",
+    "termination_date": "2025-01-23",
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 2351.38,
+    "deductible_remaining": 890.12,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_887e336c",
+    "user_id": "u1021",
+    "member_id": "M161324",
+    "plan_id": "plan_5da0c670",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2025-02-04",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 1876.87,
+    "deductible_remaining": 203.88,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_a8f7b440",
+    "user_id": "u1022",
+    "member_id": "M346629",
+    "plan_id": "plan_16f39c8f",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2023-05-03",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3805.74,
+    "deductible_remaining": 1751.02,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_eabc6d41",
+    "user_id": "u1023",
+    "member_id": "M648177",
+    "plan_id": "plan_68e0239c",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-08-15",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5194.3,
+    "deductible_remaining": 899.99,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_e5adcf5f",
+    "user_id": "u1024",
+    "member_id": "M431535",
+    "plan_id": "plan_abd4d167",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2023-01-10",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 4282.37,
+    "deductible_remaining": 397.37,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_9712755f",
+    "user_id": "u1025",
+    "member_id": "M465962",
+    "plan_id": "plan_40af3ff3",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2025-06-19",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 6624.66,
+    "deductible_remaining": 310.76,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_823f0597",
+    "user_id": "u1026",
+    "member_id": "M240814",
+    "plan_id": "plan_331ecea0",
+    "plan_name": "Gold HMO",
+    "effective_date": "2023-04-29",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 2658.46,
+    "deductible_remaining": 1028.64,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_4d35027a",
+    "user_id": "u1027",
+    "member_id": "M820892",
+    "plan_id": "plan_d1f6e4c9",
+    "plan_name": "Gold HMO",
+    "effective_date": "2024-06-01",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 6061.41,
+    "deductible_remaining": 132.26,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_a27a50b2",
+    "user_id": "u1028",
+    "member_id": "M449759",
+    "plan_id": "plan_7e854bb6",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-10-14",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 1913.84,
+    "deductible_remaining": 2649.32,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_4a117cef",
+    "user_id": "u1029",
+    "member_id": "M256294",
+    "plan_id": "plan_8c9e4539",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2025-05-04",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 6444.09,
+    "deductible_remaining": 630.23,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_99e1a0ec",
+    "user_id": "u1030",
+    "member_id": "M361650",
+    "plan_id": "plan_dde25c62",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2023-12-29",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 6347.79,
+    "deductible_remaining": 74.36,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_02e56be1",
+    "user_id": "u1031",
+    "member_id": "M872343",
+    "plan_id": "plan_3edf06d6",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-03-12",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 2094.53,
+    "deductible_remaining": 2616.5,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_6e349f39",
+    "user_id": "u1032",
+    "member_id": "M593554",
+    "plan_id": "plan_a875cfe0",
+    "plan_name": "Silver PPO",
+    "effective_date": "2023-07-24",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 3691.56,
+    "deductible_remaining": 835.81,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_e6f67822",
+    "user_id": "u1033",
+    "member_id": "M172792",
+    "plan_id": "plan_10fdcdfb",
+    "plan_name": "Gold HMO",
+    "effective_date": "2023-12-26",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 4693.24,
+    "deductible_remaining": 2950.65,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_0d0f1594",
+    "user_id": "u1034",
+    "member_id": "M140115",
+    "plan_id": "plan_72f21c5f",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2024-09-02",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 2900.97,
+    "deductible_remaining": 2126.36,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_7e160ef5",
+    "user_id": "u1035",
+    "member_id": "M101773",
+    "plan_id": "plan_e0b3e9f4",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-01-08",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5458.65,
+    "deductible_remaining": 900.97,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_697c22d6",
+    "user_id": "u1036",
+    "member_id": "M424308",
+    "plan_id": "plan_034d3ae5",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2023-12-01",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 6672.0,
+    "deductible_remaining": 2031.95,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_11d820e9",
+    "user_id": "u1037",
+    "member_id": "M282480",
+    "plan_id": "plan_afb4b316",
+    "plan_name": "Gold HMO",
+    "effective_date": "2024-02-20",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 4057.44,
+    "deductible_remaining": 1326.48,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_17bf80a0",
+    "user_id": "u1038",
+    "member_id": "M324082",
+    "plan_id": "plan_6837753d",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2025-03-23",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 5151.2,
+    "deductible_remaining": 1857.78,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_dc65f723",
+    "user_id": "u1039",
+    "member_id": "M197923",
+    "plan_id": "plan_e4382035",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-11-19",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 6911.65,
+    "deductible_remaining": 1833.82,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_714a8c96",
+    "user_id": "u1040",
+    "member_id": "M905819",
+    "plan_id": "plan_f4646ad6",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2024-04-11",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 2841.91,
+    "deductible_remaining": 1968.17,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_148a240d",
+    "user_id": "u1041",
+    "member_id": "M105814",
+    "plan_id": "plan_af409f48",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2025-03-08",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 5907.79,
+    "deductible_remaining": 2002.73,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_9d192720",
+    "user_id": "u1042",
+    "member_id": "M686075",
+    "plan_id": "plan_18640d62",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-08-30",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 2925.55,
+    "deductible_remaining": 741.72,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_25086aa9",
+    "user_id": "u1043",
+    "member_id": "M768636",
+    "plan_id": "plan_24158fca",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-02-23",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5424.5,
+    "deductible_remaining": 703.48,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_e8ec539e",
+    "user_id": "u1044",
+    "member_id": "M452161",
+    "plan_id": "plan_d2e18614",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-07-03",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 2676.74,
+    "deductible_remaining": 1244.6,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_4388cf71",
+    "user_id": "u1045",
+    "member_id": "M446954",
+    "plan_id": "plan_2aa2a2de",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2024-03-01",
+    "termination_date": "2025-03-06",
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 4123.39,
+    "deductible_remaining": 2828.22,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_22f39a96",
+    "user_id": "u1046",
+    "member_id": "M413118",
+    "plan_id": "plan_94d71f04",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2025-05-23",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 3897.1,
+    "deductible_remaining": 87.07,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_b555765f",
+    "user_id": "u1047",
+    "member_id": "M452457",
+    "plan_id": "plan_77d1c435",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2025-01-11",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 4755.41,
+    "deductible_remaining": 1989.0,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_563febe9",
+    "user_id": "u1048",
+    "member_id": "M188025",
+    "plan_id": "plan_55a54a1e",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2023-05-19",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3297.65,
+    "deductible_remaining": 2283.69,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_869130ef",
+    "user_id": "u1049",
+    "member_id": "M497542",
+    "plan_id": "plan_7879fcd8",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-02-09",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5619.63,
+    "deductible_remaining": 156.26,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_66d16236",
+    "user_id": "u1050",
+    "member_id": "M466960",
+    "plan_id": "plan_639b19c5",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-10-27",
+    "termination_date": "2024-02-11",
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 2338.1,
+    "deductible_remaining": 378.66,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_f64becfc",
+    "user_id": "u1051",
+    "member_id": "M801978",
+    "plan_id": "plan_a4aabef6",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2024-07-31",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5777.86,
+    "deductible_remaining": 491.3,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_ef949954",
+    "user_id": "u1052",
+    "member_id": "M426147",
+    "plan_id": "plan_e492c322",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2024-08-15",
+    "termination_date": "2024-11-15",
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 5334.56,
+    "deductible_remaining": 904.75,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_6d34fdad",
+    "user_id": "u1053",
+    "member_id": "M817497",
+    "plan_id": "plan_f9001e97",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2025-03-26",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 1879.26,
+    "deductible_remaining": 1942.63,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_029a4726",
+    "user_id": "u1054",
+    "member_id": "M113266",
+    "plan_id": "plan_91e922aa",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2025-04-22",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5535.87,
+    "deductible_remaining": 2896.42,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_014ef32e",
+    "user_id": "u1055",
+    "member_id": "M383201",
+    "plan_id": "plan_253a18b9",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2024-04-21",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 6348.97,
+    "deductible_remaining": 731.59,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_042643a6",
+    "user_id": "u1056",
+    "member_id": "M587282",
+    "plan_id": "plan_e077693f",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2023-12-11",
+    "termination_date": "2024-11-28",
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3038.12,
+    "deductible_remaining": 1788.47,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_61498089",
+    "user_id": "u1057",
+    "member_id": "M389688",
+    "plan_id": "plan_9a6eacf5",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2024-06-13",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3964.96,
+    "deductible_remaining": 51.73,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_773183b2",
+    "user_id": "u1058",
+    "member_id": "M408528",
+    "plan_id": "plan_7d5e3ebf",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-02-19",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 3434.96,
+    "deductible_remaining": 1361.24,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_2ef7fc50",
+    "user_id": "u1059",
+    "member_id": "M421517",
+    "plan_id": "plan_48765312",
+    "plan_name": "Gold HMO",
+    "effective_date": "2023-08-25",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 2553.48,
+    "deductible_remaining": 2215.81,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_2648e5e4",
+    "user_id": "u1060",
+    "member_id": "M389930",
+    "plan_id": "plan_6eb61872",
+    "plan_name": "Gold HMO",
+    "effective_date": "2023-04-13",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 3008.71,
+    "deductible_remaining": 2922.88,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_70216407",
+    "user_id": "u1061",
+    "member_id": "M680238",
+    "plan_id": "plan_b5a718b0",
+    "plan_name": "Gold HMO",
+    "effective_date": "2024-12-15",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 4132.93,
+    "deductible_remaining": 1022.12,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_c242caac",
+    "user_id": "u1062",
+    "member_id": "M153872",
+    "plan_id": "plan_a0b67954",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-08-21",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 1907.45,
+    "deductible_remaining": 1888.34,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_2674c2f2",
+    "user_id": "u1063",
+    "member_id": "M156213",
+    "plan_id": "plan_ffc1298e",
+    "plan_name": "Silver PPO",
+    "effective_date": "2023-06-02",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 4569.4,
+    "deductible_remaining": 1248.52,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_82eeac65",
+    "user_id": "u1064",
+    "member_id": "M725084",
+    "plan_id": "plan_a391a1d3",
+    "plan_name": "Silver PPO",
+    "effective_date": "2025-03-05",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 6711.75,
+    "deductible_remaining": 623.36,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_207f514f",
+    "user_id": "u1065",
+    "member_id": "M321275",
+    "plan_id": "plan_fdc5ce67",
+    "plan_name": "Gold HMO",
+    "effective_date": "2024-11-07",
+    "termination_date": "2024-09-02",
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3746.85,
+    "deductible_remaining": 2068.11,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_7c0f51d5",
+    "user_id": "u1066",
+    "member_id": "M592738",
+    "plan_id": "plan_27a2a600",
+    "plan_name": "Gold HMO",
+    "effective_date": "2023-02-03",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 2131.27,
+    "deductible_remaining": 674.43,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_078fa5b8",
+    "user_id": "u1067",
+    "member_id": "M256226",
+    "plan_id": "plan_08295b49",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-04-26",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 4077.84,
+    "deductible_remaining": 912.27,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_452234a5",
+    "user_id": "u1068",
+    "member_id": "M522060",
+    "plan_id": "plan_abd15757",
+    "plan_name": "Gold HMO",
+    "effective_date": "2024-05-27",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 4820.43,
+    "deductible_remaining": 77.59,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_b0780c4c",
+    "user_id": "u1069",
+    "member_id": "M340044",
+    "plan_id": "plan_1c919e9b",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2025-02-22",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 4354.3,
+    "deductible_remaining": 1326.69,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_dc8aa2b7",
+    "user_id": "u1070",
+    "member_id": "M391668",
+    "plan_id": "plan_c9c45d57",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-08-22",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 3745.91,
+    "deductible_remaining": 963.17,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_bf1720ab",
+    "user_id": "u1071",
+    "member_id": "M209680",
+    "plan_id": "plan_50958b1e",
+    "plan_name": "Silver PPO",
+    "effective_date": "2023-12-04",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 2888.19,
+    "deductible_remaining": 347.76,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_eee6873a",
+    "user_id": "u1072",
+    "member_id": "M910075",
+    "plan_id": "plan_e1bde803",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2025-06-04",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 4939.75,
+    "deductible_remaining": 2279.97,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_186c3d9d",
+    "user_id": "u1073",
+    "member_id": "M313446",
+    "plan_id": "plan_da7c2022",
+    "plan_name": "Gold HMO",
+    "effective_date": "2024-07-16",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3209.13,
+    "deductible_remaining": 41.02,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_9ebfe7a7",
+    "user_id": "u1074",
+    "member_id": "M527809",
+    "plan_id": "plan_35a64f60",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2023-08-19",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 3785.2,
+    "deductible_remaining": 1447.5,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_fe6d7fc3",
+    "user_id": "u1075",
+    "member_id": "M595158",
+    "plan_id": "plan_a5801ca4",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-04-12",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3369.31,
+    "deductible_remaining": 2363.15,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_89ddf642",
+    "user_id": "u1076",
+    "member_id": "M380150",
+    "plan_id": "plan_293c4a6f",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2023-10-17",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3328.42,
+    "deductible_remaining": 2288.62,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_c832cebc",
+    "user_id": "u1077",
+    "member_id": "M495533",
+    "plan_id": "plan_60d13cf6",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2025-08-13",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 6208.07,
+    "deductible_remaining": 1232.33,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_35368e30",
+    "user_id": "u1078",
+    "member_id": "M433632",
+    "plan_id": "plan_4cae76de",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2024-12-23",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 4262.6,
+    "deductible_remaining": 1770.54,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_ce8c9410",
+    "user_id": "u1079",
+    "member_id": "M205239",
+    "plan_id": "plan_78466f2d",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2023-04-13",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 4082.2,
+    "deductible_remaining": 2907.61,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_f3967b0e",
+    "user_id": "u1080",
+    "member_id": "M455007",
+    "plan_id": "plan_f84d04c7",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2024-10-27",
+    "termination_date": "2024-12-02",
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 2791.24,
+    "deductible_remaining": 2053.2,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_ea1156fe",
+    "user_id": "u1081",
+    "member_id": "M401338",
+    "plan_id": "plan_6286018c",
+    "plan_name": "Silver PPO",
+    "effective_date": "2025-02-03",
+    "termination_date": "2024-04-10",
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5317.01,
+    "deductible_remaining": 2710.27,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_74ff6c57",
+    "user_id": "u1082",
+    "member_id": "M148225",
+    "plan_id": "plan_fe5fa4dd",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-03-26",
+    "termination_date": "2025-01-02",
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 5249.9,
+    "deductible_remaining": 540.17,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_adb73875",
+    "user_id": "u1083",
+    "member_id": "M283573",
+    "plan_id": "plan_7c0ed4a3",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2024-09-16",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 4036.32,
+    "deductible_remaining": 761.93,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_33bf0c79",
+    "user_id": "u1084",
+    "member_id": "M367729",
+    "plan_id": "plan_19be7d6d",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2025-07-09",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 6932.08,
+    "deductible_remaining": 897.46,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_4dd20bf2",
+    "user_id": "u1085",
+    "member_id": "M544920",
+    "plan_id": "plan_c5352abc",
+    "plan_name": "Gold HMO",
+    "effective_date": "2024-04-12",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 4661.47,
+    "deductible_remaining": 2978.08,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_c061d234",
+    "user_id": "u1086",
+    "member_id": "M409571",
+    "plan_id": "plan_7e8c4045",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2025-04-29",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 6080.61,
+    "deductible_remaining": 2708.8,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_a14046e5",
+    "user_id": "u1087",
+    "member_id": "M913423",
+    "plan_id": "plan_933eb3ea",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-09-13",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      }
+    ],
+    "out_of_pocket_max": 5655.68,
+    "deductible_remaining": 2302.41,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_69c16a18",
+    "user_id": "u1088",
+    "member_id": "M813928",
+    "plan_id": "plan_963fabb2",
+    "plan_name": "Silver PPO",
+    "effective_date": "2024-10-05",
+    "termination_date": "2024-02-10",
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 6502.95,
+    "deductible_remaining": 980.16,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_eb1edfa9",
+    "user_id": "u1089",
+    "member_id": "M535686",
+    "plan_id": "plan_7da394de",
+    "plan_name": "Silver PPO",
+    "effective_date": "2023-07-25",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 6527.27,
+    "deductible_remaining": 2832.56,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_3778dc8d",
+    "user_id": "u1090",
+    "member_id": "M945664",
+    "plan_id": "plan_a9b51030",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-02-03",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 1996.67,
+    "deductible_remaining": 1183.72,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_76a876cb",
+    "user_id": "u1091",
+    "member_id": "M377304",
+    "plan_id": "plan_c16c939e",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2024-04-10",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 2095.9,
+    "deductible_remaining": 701.47,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_75510146",
+    "user_id": "u1092",
+    "member_id": "M126240",
+    "plan_id": "plan_14bb5979",
+    "plan_name": "Gold HMO",
+    "effective_date": "2025-07-26",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 6704.44,
+    "deductible_remaining": 913.09,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_eda4ec0e",
+    "user_id": "u1093",
+    "member_id": "M616554",
+    "plan_id": "plan_083e7f0d",
+    "plan_name": "Bronze PPO",
+    "effective_date": "2023-04-10",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 6369.78,
+    "deductible_remaining": 1964.77,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_79ade8a0",
+    "user_id": "u1094",
+    "member_id": "M974190",
+    "plan_id": "plan_af479dba",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2024-09-22",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3938.61,
+    "deductible_remaining": 2851.67,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_8b509840",
+    "user_id": "u1095",
+    "member_id": "M997004",
+    "plan_id": "plan_8666c970",
+    "plan_name": "Gold HMO",
+    "effective_date": "2023-04-12",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      }
+    ],
+    "out_of_pocket_max": 6825.14,
+    "deductible_remaining": 2847.03,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_8b04c56d",
+    "user_id": "u1096",
+    "member_id": "M964226",
+    "plan_id": "plan_2d2d178a",
+    "plan_name": "Platinum EPO",
+    "effective_date": "2023-04-04",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      }
+    ],
+    "out_of_pocket_max": 2839.63,
+    "deductible_remaining": 377.77,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_99403443",
+    "user_id": "u1097",
+    "member_id": "M692002",
+    "plan_id": "plan_c83c35f7",
+    "plan_name": "Silver PPO",
+    "effective_date": "2023-03-12",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 5837.54,
+    "deductible_remaining": 1787.94,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_00bd8e7d",
+    "user_id": "u1098",
+    "member_id": "M390743",
+    "plan_id": "plan_cd52d9a0",
+    "plan_name": "Silver PPO",
+    "effective_date": "2023-05-14",
+    "termination_date": null,
+    "in_network": true,
+    "coverages": [
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 1581.73,
+    "deductible_remaining": 2369.95,
+    "notes": "Synthetic record for demo/testing only."
+  },
+  {
+    "benefit_id": "benefit_259749e9",
+    "user_id": "u1099",
+    "member_id": "M349489",
+    "plan_id": "plan_9a7361f2",
+    "plan_name": "Gold HMO",
+    "effective_date": "2023-01-17",
+    "termination_date": null,
+    "in_network": false,
+    "coverages": [
+      {
+        "category": "Lab",
+        "copay": 20,
+        "coinsurance": 0.1,
+        "deductible": 500
+      },
+      {
+        "category": "Primary Care Visit",
+        "copay": 25,
+        "coinsurance": 0.1,
+        "deductible": 1500
+      },
+      {
+        "category": "Emergency Room",
+        "copay": 250,
+        "coinsurance": 0.2,
+        "deductible": 3000
+      },
+      {
+        "category": "Imaging",
+        "copay": 100,
+        "coinsurance": 0.3,
+        "deductible": 2000
+      },
+      {
+        "category": "Specialist Visit",
+        "copay": 40,
+        "coinsurance": 0.2,
+        "deductible": 1500
+      }
+    ],
+    "out_of_pocket_max": 3965.51,
+    "deductible_remaining": 1086.12,
+    "notes": "Synthetic record for demo/testing only."
+  }
+]
