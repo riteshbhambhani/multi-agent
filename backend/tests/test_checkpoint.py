@@ -1,4 +1,4 @@
-from agents import ckpt_store
+from ..agents import ckpt_store
 
 def test_ckpt_cycle(tmp_path, monkeypatch):
     # Use real DB per env

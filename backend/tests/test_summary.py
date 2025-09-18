@@ -1,6 +1,6 @@
-from agents.summary import SummaryAgent
-from agents.orchestrator import GraphState
-from models.model_loader import load_llm
+from ..agents.summary import SummaryAgent
+from ..agents.orchestrator import GraphState
+from ..models.model_loader import load_llm
 import os, pytest
 
 @pytest.mark.skipif(not os.getenv("MODEL_PATH"), reason="MODEL_PATH not set")

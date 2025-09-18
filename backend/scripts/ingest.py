@@ -1,14 +1,17 @@
-import argparse, json, sqlite3, os, pathlib, uuid
+import argparse, json, sqlite3, os, pathlib, uuid, logging
 from sentence_transformers import SentenceTransformer
 from langchain_community.vectorstores import FAISS
 from langchain.embeddings.base import Embeddings
 from langchain.docstore.document import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
+logger = logging.getLogger("backend.scripts.ingest")
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--benefits", required=True)
 parser.add_argument("--claims", required=True)
 args = parser.parse_args()
+logger.info("Ingest started benefits=%s claims=%s", args.benefits, args.claims)
 
 DB_PATH = os.getenv("DB_PATH","backend/db/app.db")
 EMB_NAME = os.getenv("EMBEDDINGS_MODEL","BAAI/bge-small-en-v1.5")
@@ -20,6 +23,7 @@ def load_json(p):
 
 benefits = load_json(args.benefits)
 claims = load_json(args.claims)
+logger.info("Loaded %d benefits and %d claims from disk", len(benefits), len(claims))
 
 con = sqlite3.connect(DB_PATH)
 cur = con.cursor()
@@ -58,4 +62,5 @@ vs.save_local(str(INDEX_PATH))
 cur.execute("INSERT OR REPLACE INTO vector_index(idx_name, location, dim) VALUES (?,?,?)",
             ("main", str(INDEX_PATH), model.get_sentence_embedding_dimension()))
 con.commit(); con.close()
+logger.info("Ingest complete. Index saved at %s", INDEX_PATH)
 print("Ingested", len(benefits), "benefits and", len(claims), "claims. Index at", INDEX_PATH)

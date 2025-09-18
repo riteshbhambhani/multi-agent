@@ -1,5 +1,5 @@
 import pytest
-from agents.orchestrator import _route
+from ..agents.orchestrator import _route
 
 @pytest.mark.parametrize("q,route",[
     ("What's my copay for imaging?", "benefit"),
