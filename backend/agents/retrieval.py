@@ -1,82 +1,119 @@
-import json, sqlite3, os, pathlib, logging
-from langchain_community.vectorstores import FAISS
-from langchain.embeddings.base import Embeddings
+import os, pathlib, re
+from typing import List, Tuple, Dict, Optional
+import chromadb
+from chromadb.config import Settings
+from sentence_transformers import SentenceTransformer, CrossEncoder
+from backend.logging_setup import setup_logging
 
-DB_PATH = os.getenv("DB_PATH","backend/db/app.db")
-logger = logging.getLogger("backend.retrieval")
 
-class STEmb(Embeddings):
-    def __init__(self, name):
-        from sentence_transformers import SentenceTransformer
-        logger.info("Initializing SentenceTransformer embeddings model=%s", name)
-        self.m = SentenceTransformer(name, device="cpu")
-    def embed_documents(self, texts): return self.m.encode(texts, normalize_embeddings=True).tolist()
-    def embed_query(self, text): return self.m.encode([text], normalize_embeddings=True)[0].tolist()
+logger = setup_logging("retrieval")
 
-def load_faiss():
-    logger.info("Loading FAISS index from DB=%s", DB_PATH)
-    con = sqlite3.connect(DB_PATH)
-    row = con.execute("SELECT location FROM vector_index WHERE idx_name='main'").fetchone()
-    con.close()
-    if not row:
-        logger.error("No vector index found in DB; instruct to run scripts/ingest.py")
-        raise RuntimeError("Vector index not found. Run scripts/ingest.py")
-    index_path = row[0]
-    emb_name = os.getenv("EMBEDDINGS_MODEL","BAAI/bge-small-en-v1.5")
-    logger.info("FAISS index path=%s embeddings_model=%s", index_path, emb_name)
-    return FAISS.load_local(index_path, STEmb(emb_name), allow_dangerous_deserialization=True)
 
-class BenefitRetriever:
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-large-en-v1.5")
+RERANKER_MODEL = os.getenv("RERANKER_MODEL", "cross-encoder/ms-marco-MiniLM-L-6-v2")
+CHROMA_PATH = pathlib.Path(os.getenv("CHROMA_PATH", "backend/db/chroma")).resolve()
+TOP_K = int(os.getenv("RETRIEVE_K", "20"))
+FINAL_K = int(os.getenv("FINAL_K", "5"))
+
+MEMBER_ID_REGEX = re.compile(r"\bM\d{6}\b")  # e.g., M770487
+
+
+class ChromaRetriever:
+    def __init__(self, collection_name: str):
+        self.collection_name = collection_name
+        self.client = chromadb.PersistentClient(
+            path=str(CHROMA_PATH), settings=Settings(allow_reset=False)
+        )
+        self.collection = self.client.get_or_create_collection(collection_name)
+        self.embed = SentenceTransformer(EMBEDDING_MODEL, device="cpu")
+        self.reranker = CrossEncoder(RERANKER_MODEL, device="cpu")
+        logger.info("Retriever ready: collection=%s", collection_name)
+
+    def _query(
+        self, query: str, k: int = TOP_K, where: Optional[Dict] = None
+    ) -> List[Tuple[str, str, Dict]]:
+        qv = self.embed.encode([query], normalize_embeddings=True).tolist()[0]
+        res = self.collection.query(
+            query_embeddings=[qv],
+            n_results=k,
+            where=where,
+            include=["documents", "metadatas", "distances"],
+        )
+        docs = res.get("documents", [[]])[0]
+        metas = res.get("metadatas", [[]])[0]
+        ids = res.get("ids", [[]])[0] if "ids" in res else [m.get("id", "unknown") for m in metas]
+        out = [(i, d, m) for i, d, m in zip(ids, docs, metas)]
+        logger.debug(
+            "Retrieved %d candidates from %s with filter=%s",
+            len(out), self.collection_name, where,
+        )
+        return out
+
+    def search(
+        self, query: str, k: int = TOP_K, final_k: int = FINAL_K
+    ) -> Tuple[str, List[Dict]]:
+        cands = self._query(query, k=k)
+        if not cands:
+            return "", []
+        pairs = [(query, txt) for _, txt, _ in cands]
+        scores = self.reranker.predict(pairs)
+        ranked = sorted(zip(cands, scores), key=lambda x: x[1], reverse=True)
+        top = ranked[:final_k]
+        context = "\n\n".join(item[0][1] for item in top)
+        prov = [
+            {"file": self.collection_name, "doc_id": item[0][0], "offsets": []}
+            for item in top
+        ]
+        logger.info(
+            "Reranked %d→%d for %s", len(cands), len(top), self.collection_name
+        )
+        return context, prov
+
+
+class BenefitRetriever(ChromaRetriever):
     def __init__(self):
-        logger.info("Initializing BenefitRetriever")
-        self.index = load_faiss()
-        logger.info("BenefitRetriever initialized")
-    def search(self, query, k=6):
-        logger.info("BenefitRetriever.search query=%s k=%d", query[:80], k)
-        docs = self.index.similarity_search(query, k=k)
-        ctx = "\n\n".join(d.page_content for d in docs)
-        prov = [{"file":d.metadata.get("source"),"doc_id":d.metadata.get("id"),"offsets":[]} for d in docs]
-        logger.info("BenefitRetriever.search returned %d docs", len(docs))
-        return ctx, prov
-
-class ClaimRetriever(BenefitRetriever):
-    pass
-
-def load_claims_data():
-    p = os.path.join(os.path.dirname(__file__), '..', 'data', 'claims.json')
-    p = os.path.normpath(p)
-    try:
-        with open(p, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception:
-        logger.exception("Failed to load claims.json at %s", p)
-        return []
-
-def find_claim_by_id(claim_id: str):
-    claims = load_claims_data()
-    for c in claims:
-        # normalized key may be 'claim_id' or 'id'
-        cid = c.get('claim_id') or c.get('id')
-        if cid == claim_id:
-            return c
-    return None
+        super().__init__("benefits")
 
 
-def load_benefits_data():
-    p = os.path.join(os.path.dirname(__file__), '..', 'data', 'benefits.json')
-    p = os.path.normpath(p)
-    try:
-        with open(p, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception:
-        logger.exception("Failed to load benefits.json at %s", p)
-        return []
+class ClaimRetriever(ChromaRetriever):
+    def __init__(self):
+        super().__init__("claims")
 
+    def search(
+        self, query: str, k: int = TOP_K, final_k: int = FINAL_K
+    ) -> Tuple[str, List[Dict]]:
+        # Try to extract member_id
+        member_match = MEMBER_ID_REGEX.search(query)
+        where = {"member_id": member_match.group()} if member_match else None
+        if where:
+            logger.info("Applying hybrid filter: restricting to member_id=%s", where["member_id"])
+        else:
+            logger.info("No member_id found in query. Running pure semantic search.")
 
-def find_benefit_by_id(benefit_id: str):
-    benefits = load_benefits_data()
-    for b in benefits:
-        bid = b.get('benefit_id') or b.get('id')
-        if bid == benefit_id:
-            return b
-    return None
+        # Step 1: Candidate retrieval
+        cands = self._query(query, k=k, where=where)
+        if not cands:
+            return "", []
+
+        # Step 2: Reranking
+        pairs = [(query, txt) for _, txt, _ in cands]
+        scores = self.reranker.predict(pairs)
+        ranked = sorted(zip(cands, scores), key=lambda x: x[1], reverse=True)
+        top = ranked[:final_k]
+
+        # Step 3: Build context + provenance
+        context = "\n\n".join(item[0][1] for item in top)
+        prov = [
+            {
+                "file": self.collection_name,
+                "doc_id": item[0][0],
+                "member_id": item[0][2].get("member_id"),
+                "offsets": [],
+            }
+            for item in top
+        ]
+        logger.info(
+            "Reranked %d→%d for %s (filter=%s)",
+            len(cands), len(top), self.collection_name, where,
+        )
+        return context, prov

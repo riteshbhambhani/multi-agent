@@ -1,0 +1,61 @@
+
+:root {
+  --bg: #212121;
+  --panel: #171717;
+  --panel-2: #1f1f1f;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #10a37f;
+  --accent-2: #2ea089;
+  --border: #2a2a2a;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial; background: var(--bg); color: var(--text); }
+a { color: inherit; }
+
+.app { display: grid; grid-template-columns: 260px 1fr; height: 100vh; }
+
+/* Sidebar */
+.sidebar { background: var(--panel); border-right: 1px solid var(--border); padding: 12px; display: flex; flex-direction: column; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.newchat { background: transparent; border: 1px solid var(--border); padding: 10px 12px; border-radius: 10px; color: var(--text); cursor: pointer; }
+.newchat:hover { border-color: var(--accent); }
+.history { flex: 1; overflow: auto; border-top: 1px solid var(--border); padding-top: 8px; }
+.historyItem { padding: 8px 10px; border-radius: 8px; color: var(--muted); cursor: pointer; }
+.historyItem:hover { background: var(--panel-2); color: var(--text); }
+.sidebarFooter { color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); padding-top: 8px; }
+
+/* Main */
+.main { display: grid; grid-template-rows: auto 1fr auto; height: 100vh; }
+.topbar { display:flex; align-items:center; justify-content:center; height: 48px; border-bottom:1px solid var(--border); background: var(--panel); position: sticky; top: 0; z-index: 1; }
+.topbarTitle { font-size: 14px; color: var(--muted); }
+
+/* Messages */
+.messages { overflow: auto; padding: 24px 0; }
+.msg { display: grid; grid-template-columns: minmax(12px, 1fr) minmax(0, 720px) minmax(12px, 1fr); }
+.msgInner { grid-column: 2; padding: 16px 20px; }
+.role-user .msgInner { background: #2b2b2b; }
+.role-assistant .msgInner { background: transparent; }
+.msgHeader { display:flex; align-items:center; gap:8px; color: var(--muted); margin-bottom: 6px; font-size: 13px; }
+.msgText { white-space: pre-wrap; line-height: 1.6; }
+
+.provenance { margin-top: 8px; padding: 10px; background: #262626; border: 1px dashed var(--border); border-radius: 8px; color: var(--muted); font-size: 12px; }
+
+/* Composer */
+.composer { position: sticky; bottom: 0; background: linear-gradient(180deg, rgba(33,33,33,0) 0%, var(--bg) 40%); padding: 16px 24px 28px; }
+.composerInner { max-width: 820px; margin: 0 auto; }
+.textareaWrap { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 10px; display: flex; gap: 8px; }
+.textarea { flex: 1; resize: none; max-height: 180px; min-height: 24px; outline: none; border: 0; background: transparent; color: var(--text); padding: 8px; }
+.send { background: var(--accent); color: white; border: 0; border-radius: 10px; padding: 8px 12px; cursor: pointer; }
+.send:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.helperRow { display:flex; justify-content: space-between; margin-top: 8px; color: var(--muted); font-size: 12px; }
+.hint { color: var(--muted); }
+.kbd { border: 1px solid var(--border); border-bottom-width: 2px; padding: 0 6px; border-radius: 6px; margin-left: 6px; }
+
+/* Clarification pill */
+.resumeCard { margin-top: 10px; border: 1px solid var(--border); background: var(--panel-2); border-radius: 10px; padding: 10px; }
+.resumeRow { display:flex; gap:8px; margin-top:8px; }
+.resumeInput { flex:1; background: #2b2b2b; color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px; }
+.resumeBtn { background: var(--accent-2); border: 0; color: white; padding: 8px 10px; border-radius: 8px; cursor: pointer; }

@@ -3,7 +3,7 @@ from typing import Iterator
 from transformers import AutoModelForCausalLM, AutoTokenizer, TextIteratorStreamer
 from threading import Thread
 from huggingface_hub import InferenceClient
-from huggingface_hub.utils._errors import HfHubHTTPError
+from huggingface_hub.errors import HfHubHTTPError
 try:
     from openai import OpenAI
 except Exception:

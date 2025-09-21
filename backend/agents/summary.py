@@ -5,7 +5,7 @@ from ..models.model_loader import model_info
 
 logger = logging.getLogger("backend.agents.summary")
 
-SUMMARY_PROMPT = PromptTemplate.from_template("""You are SummaryAgent. Merge BENEFIT and CLAIM results into 3 bullets max, then 'Next steps' list.
+SUMMARY_PROMPT = PromptTemplate.from_template("""You are SummaryAgent. Merge BENEFIT and CLAIM results into 3 bullets max, then 'Next steps' list. Do not add special characters like * and # in the response.
 Benefit:
 {benefit}
 Claim:

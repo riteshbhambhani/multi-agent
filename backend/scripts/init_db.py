@@ -1,5 +1,6 @@
 import sqlite3, os, pathlib, logging
 from dotenv import load_dotenv
+
 load_dotenv()
 
 logger = logging.getLogger("backend.scripts.init_db")

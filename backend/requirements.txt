@@ -1,19 +1,27 @@
-fastapi==0.115.0
-uvicorn[standard]==0.30.6
-pydantic==2.9.2
-python-dotenv==1.0.1
-langchain==0.2.14
-langgraph==0.2.20
-ragas==0.2.3
-# faiss-cpu pinned to a recent available wheel. If you are on macOS/Apple Silicon
-# and this still fails, consider installing via conda-forge or building from source.
-faiss-cpu==1.12.0
-sentence-transformers==3.0.1
-tenacity==8.5.0
-python-multipart==0.0.9
-websockets==12.0
-pytest==8.3.2
-transformers==4.44.2
-huggingface_hub==0.24.6
-accelerate==0.34.2
-torch==2.8.0
+python-dotenv>=1.0,<2
+pydantic>=2.6,<3
+tenacity>=8.2,<9
+tqdm>=4.66,<5
+numpy>=1.26,<3
+pandas>=2.0,<3
+rich>=13.7,<14
+
+
+langchain==0.2.16
+langchain-core==0.2.41
+langchain-community==0.2.12
+langchain-openai==0.1.25
+langsmith==0.1.117   # bump to >=0.1.112
+langgraph==0.0.64
+
+
+chromadb>=0.5.4,<0.6.0
+
+
+sentence-transformers>=3.0.0,<3.1.0
+transformers>=4.43.0,<5
+torch>=2.2.0
+
+
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1

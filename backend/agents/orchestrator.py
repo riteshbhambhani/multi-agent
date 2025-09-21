@@ -1,161 +1,202 @@
-import re, json, os
-from pydantic import BaseModel
-from typing import Literal, Optional, List
-from langgraph.graph import StateGraph, END
-from tenacity import retry, wait_exponential, stop_after_attempt
-import logging
-from math import acos
-from math import sqrt
+from __future__ import annotations
 
-logger = logging.getLogger("backend.orchestrator")
+import logging
+import re
+import uuid
+import json
+import os
+from typing import Literal, Optional, List
+from pydantic import BaseModel, Field
+from langgraph.graph import StateGraph, END
+from backend.logging_setup import setup_logging
+from backend.agents import ckpt_store
+
+# Reduce noisy HF tokenizers warning in forked workers
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+
+logger = setup_logging("orchestrator")
+
 
 class GraphState(BaseModel):
     session_id: str
     user_id: str
     question: str
-    route: Literal["benefit","claim","both","clarify","unknown"] = "unknown"
+    route: Literal["benefit", "claim", "both", "clarify", "unknown"] = "unknown"
+    original_route: Optional[str] = None
+    needs_claim: bool = False
+
     benefit_result: Optional[str] = None
     claim_result: Optional[str] = None
     summary: Optional[str] = None
-    provenance: List[dict] = []
+    provenance: List[dict] = Field(default_factory=list)
     checkpoint_id: Optional[str] = None
-    route_confidence: Optional[float] = None
-
-benefit_terms = r"(benefit|coverage|copay|coinsurance|deductible|eligibility|in[- ]network|out[- ]of[- ]pocket)"
-claim_terms   = r"(claim|eob|denied|allowed|paid|adjusted|appeal|authorization|prior auth)"
-
-def _route(q:str)->str:
-    has_b = re.search(benefit_terms, q, re.I) is not None
-    has_c = re.search(claim_terms, q, re.I) is not None
-    if has_b and has_c: return "both"
-    if has_b: return "benefit"
-    if has_c: return "claim"
-    return "clarify"
 
 
-class SemanticRouter:
-    """Lightweight semantic router using sentence-transformers embeddings.
-    It loads a small embeddings model and compares cosine similarity to prototype
-    sentences for 'benefit' and 'claim'. If the model cannot be loaded it will
-    raise and the caller should fall back to the regex router.
-    """
-    def __init__(self, model_name: str = None):
-        try:
-            from sentence_transformers import SentenceTransformer
-        except Exception:
-            raise
-        self.model_name = model_name or os.getenv('EMBEDDINGS_MODEL','sentence-transformers/all-MiniLM-L6-v2')
-        self.enc = SentenceTransformer(self.model_name)
-        # prototype sentences representing each class
-        self.protos = {
-            'benefit': [
-                'Is this about coverage, copay, deductible, in-network or out-of-pocket?',
-                'What is covered under my plan?',
-            ],
-            'claim': [
-                'Is this about a specific claim, EOB, denied or paid amount?',
-                'Why was my claim denied or what was paid?',
-            ],
-            'both': [
-                'I have a question that involves both coverage and a specific claim',
-            ]
-        }
-        # embed prototypes
-        self.proto_emb = {k: [self._norm(e) for e in self.enc.encode(v, convert_to_numpy=True)] for k,v in self.protos.items()}
+# ---------------------------
+# Helpers
+# ---------------------------
 
-    def _norm(self, vec):
-        # return L2-normalized vector
-        import numpy as _np
-        arr = _np.array(vec, dtype=float)
-        n = _np.linalg.norm(arr)
-        return arr / (n+1e-12)
+def contains_kw(q: str, kws: list[str]) -> bool:
+    """Check if question contains any of the keywords."""
+    return any(re.search(rf"\b{re.escape(w)}\b", q) for w in kws)
 
-    def classify(self, text: str) -> tuple:
-        import numpy as _np
-        qv = self._norm(self.enc.encode([text], convert_to_numpy=True)[0])
-        scores = {}
-        for k, vlist in self.proto_emb.items():
-            # cosine similarity averaged
-            sims = [_np.dot(qv, pv) for pv in vlist]
-            scores[k] = float(_np.mean(sims))
-        # choose best
-        best = max(scores.items(), key=lambda x: x[1])
-        best_label, best_score = best[0], best[1]
-        # thresholding to detect clarify vs strong match
-        if best_score < float(os.getenv('ROUTER_CLARIFY_THRESHOLD','0.30')):
-            return ('clarify', float(best_score))
-        # if both benefit and claim are both reasonably high, return 'both'
-        if scores.get('benefit',0) > float(os.getenv('ROUTER_BOTH_THRESHOLD','0.45')) and scores.get('claim',0) > float(os.getenv('ROUTER_BOTH_THRESHOLD','0.45')):
-            # return the avg of the two scores as confidence
-            return ('both', float((scores.get('benefit')+scores.get('claim'))/2.0))
-        return (best_label, float(best_score))
 
-def router_node(state: GraphState):
-    # Prefer semantic routing when possible, otherwise fall back to regex-based routing.
-    try:
-        # cache a router on the module to avoid repeated loads
-        if not hasattr(router_node, '_sr'):
-            router_node._sr = SemanticRouter()
-        sr = router_node._sr
-        lab, conf = sr.classify(state.question)
-        state.route = lab
-        state.route_confidence = conf
-    except Exception:
-        # model not available or failed — fallback to regex
-        state.route = _route(state.question)
-        state.route_confidence = 1.0
-    logger.info("Router determined route=%s for session=%s", state.route, getattr(state, "session_id", None))
+# ---------------------------
+# Node functions
+# ---------------------------
+
+def router_node(state: GraphState) -> GraphState:
+    q = state.question.lower()
+
+    benefit_kw = ["benefit", "benefits", "coverage", "copay", "coinsurance", "deductible", "plan"]
+    claim_kw = ["claim", "claims", "eob", "paid", "allowed", "denied", "provider", "service date"]
+
+    b = contains_kw(q, benefit_kw)
+    c = contains_kw(q, claim_kw)
+
+    if b and c:
+        decided = "both"
+    elif b:
+        decided = "benefit"
+    elif c:
+        decided = "claim"
+    else:
+        decided = "clarify"
+
+    state.route = decided
+    state.original_route = decided
+    state.needs_claim = decided == "both"
+
+    logger.info("Router decided route=%s for q='%s'", state.route, state.question)
     return state
 
-@retry(wait=wait_exponential(multiplier=0.25, min=0.25, max=1), stop=stop_after_attempt(2))
-def benefit_node(state, benefit_agent):
-    res = benefit_agent.run(state.question, state.session_id, state.user_id)
-    state.benefit_result = res["answer"]; state.provenance += res["provenance"]
-    logger.info("Benefit node completed for session=%s", state.session_id)
-    return state
 
-@retry(wait=wait_exponential(multiplier=0.25, min=0.25, max=1), stop=stop_after_attempt(2))
-def claim_node(state, claim_agent):
-    res = claim_agent.run(state.question, state.session_id, state.user_id)
-    state.claim_result = res["answer"]; state.provenance += res["provenance"]
-    logger.info("Claim node completed for session=%s", state.session_id)
-    return state
-
-def summary_node(state, summary_agent):
-    res = summary_agent.run(state)
-    state.summary = res["answer"]; state.provenance += res["provenance"]
-    logger.info("Summary node completed for session=%s", state.session_id)
-    return state
-
-def clarification_node(state, ckpt_store):
+def save_checkpoint(state: GraphState, agent: str) -> GraphState:
+    snapshot = json.dumps(state.dict())
     ckpt = ckpt_store.create(
         user_id=state.user_id,
         session_id=state.session_id,
-        pending_agent="orchestrator",
-        pending_question="Is your question about benefits, claims, or both?",
-        context_snapshot=state.model_dump_json()
+        pending_agent=agent,
+        pending_question=state.question,
+        context_snapshot=snapshot,
     )
-    state.checkpoint_id = ckpt["checkpoint_id"]; return state
+    state.checkpoint_id = ckpt["checkpoint_id"]
+    logger.debug("Checkpoint saved: %s for agent=%s", state.checkpoint_id, agent)
+    return state
 
-def build_graph(benefit_agent, claim_agent, summary_agent, ckpt_store):
+
+def claim_node(state: GraphState, agent) -> GraphState:
+    logger.info(">>> Entered claim_node with question=%s", state.question)
+    res = agent.run(state.question, state.session_id, state.user_id)
+    state.claim_result = res["answer"]
+    state.provenance += res.get("provenance", [])
+    save_checkpoint(state, "claim")
+    logger.info(
+        "After claim_node: route=%s original_route=%s needs_claim=%s",
+        state.route, state.original_route, state.needs_claim
+    )
+    return state
+
+
+def summary_node(state: GraphState) -> GraphState:
+    logger.info(
+        ">>> Entered summary_node with benefit_result=%s and claim_result=%s",
+        state.benefit_result, state.claim_result
+    )
+    summ = (
+        f"Benefit:\n{state.benefit_result or '(none)'}\n\n"
+        f"Claim:\n{state.claim_result or '(none)'}"
+    )
+    state.summary = summ
+    save_checkpoint(state, "summary")
+    logger.info("After summary_node: checkpoint_id=%s", state.checkpoint_id)
+    return state
+
+
+def noop_node(state: GraphState) -> GraphState:
+    """No-op node to satisfy LangGraph's 'no dead-end' validation."""
+    logger.debug(">>> Entered noop_node (pass-through)")
+    return state
+
+
+# ---------------------------
+# Graph builder
+# ---------------------------
+
+def build_graph(benefit_agent, claim_agent, summary_agent=None, ckpt_store=None):
     g = StateGraph(GraphState)
+
     g.add_node("router", router_node)
-    g.add_node("benefit", lambda s: benefit_node(s, benefit_agent))
-    g.add_node("claim",   lambda s: claim_node(s, claim_agent))
-    g.add_node("summary_node", lambda s: summary_node(s, summary_agent))
-    g.add_node("clarify", lambda s: clarification_node(s, ckpt_store))
+
+    def benefit_wrapper(state: GraphState) -> GraphState:
+        try:
+            logger.info(">>> Entered benefit_node with question=%s", state.question)
+            res = benefit_agent.run(state.question, state.session_id, state.user_id)
+            state.benefit_result = res["answer"]
+            state.provenance += res.get("provenance", [])
+            save_checkpoint(state, "benefit")
+            logger.info(
+                "After benefit_node start: route=%s original_route=%s needs_claim=%s",
+                state.route, state.original_route, state.needs_claim
+            )
+
+            if state.needs_claim:
+                logger.info("Routing to claim_node …")
+                state = claim_node(state, claim_agent)
+
+            state = summary_node(state)
+            return state
+        except Exception as e:
+            logger.exception("Error inside benefit_wrapper: %s", e)
+            raise
+
+    g.add_node("benefit", benefit_wrapper)
+    g.add_node("claim", lambda s: claim_node(s, claim_agent))
+    g.add_node("summary_node", summary_node)
+    g.add_node("noop", noop_node)
+
     g.set_entry_point("router")
-    g.add_conditional_edges("router", lambda s: s.route, {
-        "benefit": "benefit",
-        "claim": "claim",
-        # map 'both' to a single start node (sequential flow: benefit -> claim)
-        "both": "benefit",
-        "clarify": "clarify",
-        "unknown": "clarify"
-    })
-    # chain benefit -> claim -> summary_node for 'both' behaviour
-    g.add_edge("benefit", "claim")
+
+    g.add_conditional_edges(
+        "router",
+        lambda s: s.route,
+        {
+            "benefit": "benefit",
+            "claim": "claim",
+            "both": "benefit",  # benefit wrapper handles claim+summary internally
+            "clarify": END,
+            "unknown": END,
+        },
+    )
+
     g.add_edge("claim", "summary_node")
-    g.add_edge("clarify", END)
     g.add_edge("summary_node", END)
+    g.add_edge("benefit", "noop")
+    g.add_edge("noop", END)
+
     return g.compile()
+
+
+# ---------------------------
+# Export a global graph placeholder
+# ---------------------------
+
+graph = None  # Will be set in main.py during startup
+
+
+# ---------------------------
+# Quick debug harness
+# ---------------------------
+
+if __name__ == "__main__":
+    class DummyAgent:
+        def run(self, q, sid, uid):
+            logger.info("DummyAgent answering for %s", q)
+            return {"answer": f"Answer for {q}", "provenance": [{"q": q}]}
+
+    g = build_graph(DummyAgent(), DummyAgent())
+    state = GraphState(session_id="s1", user_id="u1", question="Summarize benefits and claim status")
+    final = g.invoke(state)
+    print("Final summary:\n", final.summary)
+    print("Provenance:\n", final.provenance)
+    print("Checkpoint ID:", final.checkpoint_id)

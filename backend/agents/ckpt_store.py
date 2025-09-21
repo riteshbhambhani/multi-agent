@@ -23,3 +23,12 @@ def get(ckpt_id):
 def delete(ckpt_id):
     logger.info("Deleting checkpoint %s", ckpt_id)
     con = sqlite3.connect(DB_PATH); con.execute("DELETE FROM checkpoints WHERE checkpoint_id=?",(ckpt_id,)); con.commit(); con.close()
+
+def put(user_id, session_id, pending_agent, pending_question, context_snapshot):
+    logger.info("Creating checkpoint session=%s user=%s pending_agent=%s", session_id, user_id, pending_agent)
+    con = sqlite3.connect(DB_PATH)
+    ckpt_id = uuid.uuid4().hex
+    con.execute("INSERT INTO checkpoints(checkpoint_id,user_id,session_id,pending_agent,pending_question,context_snapshot) VALUES (?,?,?,?,?,?)",
+                (ckpt_id, user_id, session_id, pending_agent, pending_question, context_snapshot))
+    con.commit(); con.close()
+    return {"checkpoint_id": ckpt_id}

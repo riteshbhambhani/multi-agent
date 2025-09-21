@@ -35,10 +35,29 @@ CREATE TABLE IF NOT EXISTS checkpoints (
   created_at TEXT DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS documents (
-  doc_id TEXT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS benefits (
+  benefit_id TEXT PRIMARY KEY,
+  member_id TEXT,
+  coverage TEXT,
+  deductible REAL,
+  copay REAL,
+  coinsurance REAL,
+  out_of_pocket REAL,
   source_file TEXT NOT NULL,
-  doc_type TEXT CHECK(doc_type IN ('benefit','claim')),
+  content TEXT NOT NULL,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS claims (
+  claim_id TEXT PRIMARY KEY,
+  member_id TEXT,
+  service_date TEXT,
+  provider TEXT,
+  status TEXT,
+  billed_amount REAL,
+  allowed_amount REAL,
+  paid_amount REAL,
+  source_file TEXT NOT NULL,
   content TEXT NOT NULL,
   created_at TEXT DEFAULT CURRENT_TIMESTAMP
 );

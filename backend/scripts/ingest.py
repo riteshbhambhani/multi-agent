@@ -1,66 +1,58 @@
-import argparse, json, sqlite3, os, pathlib, uuid, logging
+import os, json, pathlib, chromadb
+from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
-from langchain_community.vectorstores import FAISS
-from langchain.embeddings.base import Embeddings
-from langchain.docstore.document import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-logger = logging.getLogger("backend.scripts.ingest")
+CHROMA_PATH = pathlib.Path(os.getenv("CHROMA_PATH", "backend/db/chroma")).resolve()
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-large-en-v1.5")
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--benefits", required=True)
-parser.add_argument("--claims", required=True)
-args = parser.parse_args()
-logger.info("Ingest started benefits=%s claims=%s", args.benefits, args.claims)
+client = chromadb.PersistentClient(path=str(CHROMA_PATH), settings=Settings(allow_reset=True))
+embed = SentenceTransformer(EMBEDDING_MODEL, device="cpu")
 
-DB_PATH = os.getenv("DB_PATH","backend/db/app.db")
-EMB_NAME = os.getenv("EMBEDDINGS_MODEL","BAAI/bge-small-en-v1.5")
-INDEX_DIR = pathlib.Path("backend/db/index"); INDEX_DIR.mkdir(parents=True, exist_ok=True)
-INDEX_PATH = INDEX_DIR / "main.faiss"
+def embed_text(text): return embed.encode([text], normalize_embeddings=True).tolist()[0]
 
-def load_json(p):
-    return json.loads(pathlib.Path(p).read_text())
+def load_and_ingest(collection_name, file_path, doc_type):
+    coll = client.get_or_create_collection(collection_name)
+    with open(file_path, "r") as f: data = json.load(f)
 
-benefits = load_json(args.benefits)
-claims = load_json(args.claims)
-logger.info("Loaded %d benefits and %d claims from disk", len(benefits), len(claims))
+    for rec in data:
+        if doc_type == "claims":
+            # Flatten claim lines if present
+            claim_text = f"Claim ID: {rec['claim_id']}, Member: {rec['member_id']}, Provider: {rec['provider']}, Status: {rec['status']}, Billed: {rec['billed_amount']}, Allowed: {rec['allowed_amount']}, Paid: {rec['paid_amount']}"
+            if rec.get("denial_reason"):
+                claim_text += f", Denial Reason: {rec['denial_reason']}"
+            if rec.get("claim_lines"):
+                for line in rec["claim_lines"]:
+                    claim_text += f"\n  Line: {line['procedure_code']} billed {line['billed_amount']} allowed {line['allowed_amount']} paid {line['paid_amount']}"
 
-con = sqlite3.connect(DB_PATH)
-cur = con.cursor()
+            meta = {
+                "member_id": rec["member_id"],
+                "status": rec["status"],
+                "out_of_network": bool(rec.get("out_of_network", False)),
+                "denial_reason": rec.get("denial_reason") or "",  # convert None -> ""
+                "icd": rec.get("icd") or ""                      # convert None -> ""
+            }
+            coll.add(
+                ids=[rec["claim_id"]],
+                documents=[claim_text],
+                metadatas=[meta],
+                embeddings=[embed_text(claim_text)]
+            )
 
-def insert_docs(items, dtype, source):
-    for it in items:
-        doc_id = it.get("claim_id") or it.get("benefit_id") or uuid.uuid4().hex
-        cur.execute("INSERT OR REPLACE INTO documents(doc_id,source_file,doc_type,content) VALUES (?,?,?,?)",
-            (doc_id, source, dtype, json.dumps(it)))
-    con.commit()
+        elif doc_type == "benefits":
+            benefit_text = f"Member {rec['member_id']} has plan {rec['plan_name']} effective {rec['effective_date']}, OOP max {rec['out_of_pocket_max']}, Deductible remaining {rec['deductible_remaining']}."
+            meta = {
+                "member_id": rec["member_id"],
+                "plan_id": rec["plan_id"],
+                "in_network": rec["in_network"]
+            }
+            coll.add(
+                ids=[rec["benefit_id"]],
+                documents=[benefit_text],
+                metadatas=[meta],
+                embeddings=[embed_text(benefit_text)]
+            )
 
-insert_docs(benefits, "benefit", "benefits.json")
-insert_docs(claims, "claim", "claims.json")
-
-# Build vector index
-texts, metas = [], []
-for row in cur.execute("SELECT doc_id, doc_type, source_file, content FROM documents"):
-    doc_id, dt, src, content = row
-    texts.append(content)
-    metas.append({"id":doc_id, "doc_type":dt, "source":src})
-
-splitter = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=120)
-docs = []
-for t,m in zip(texts, metas):
-    for chunk in splitter.split_text(t):
-        docs.append(Document(page_content=chunk, metadata=m))
-
-model = SentenceTransformer(EMB_NAME, device="cpu")
-class STEmb(Embeddings):
-    def embed_documents(self, texts): return model.encode(texts, normalize_embeddings=True).tolist()
-    def embed_query(self, text): return model.encode([text], normalize_embeddings=True)[0].tolist()
-
-vs = FAISS.from_documents(docs, STEmb())
-vs.save_local(str(INDEX_PATH))
-
-cur.execute("INSERT OR REPLACE INTO vector_index(idx_name, location, dim) VALUES (?,?,?)",
-            ("main", str(INDEX_PATH), model.get_sentence_embedding_dimension()))
-con.commit(); con.close()
-logger.info("Ingest complete. Index saved at %s", INDEX_PATH)
-print("Ingested", len(benefits), "benefits and", len(claims), "claims. Index at", INDEX_PATH)
+if __name__ == "__main__":
+    load_and_ingest("claims", "backend/data/claims_synthetic.json", "claims")
+    load_and_ingest("benefits", "backend/data/benefits.json", "benefits")
+    print("Ingestion complete.")
